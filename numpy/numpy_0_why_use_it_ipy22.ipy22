@@ -1,0 +1,299 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "kernelspec": {
+      "display_name": "Python 3",
+      "language": "python",
+      "name": "python3"
+    },
+    "language_info": {
+      "codemirror_mode": {
+        "name": "ipython",
+        "version": 3
+      },
+      "file_extension": ".py",
+      "mimetype": "text/x-python",
+      "name": "python",
+      "nbconvert_exporter": "python",
+      "pygments_lexer": "ipython3",
+      "version": "3.7.5"
+    },
+    "colab": {
+      "name": "numpy_0_why_use_it.ipy22",
+      "provenance": [],
+      "collapsed_sections": [],
+      "include_colab_link": true
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/yoon0411/pdm22/blob/main/numpy/numpy_0_why_use_it_ipy22.ipy22\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "sxXURoB1-TN5"
+      },
+      "source": [
+        "# numpy  \n",
+        "## What is numpy?  \n",
+        "* python module to do math!  \n",
+        "    - random number\n",
+        "    - array -> ndarray\n",
+        "    - math operations\n",
+        "    - ...\n",
+        "\n",
+        "#### Why do data coders use & enjoy it?"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "MCyAq6tk-JTj",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "bb877598-4c2d-4d0d-f0eb-7ebb141d62aa"
+      },
+      "source": [
+        "a=range(10)\n",
+        "a"
+      ],
+      "execution_count": 1,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "range(0, 10)"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 1
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "EaupTQMB-JTq",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "af47e7a5-b298-43c0-eeab-468701ba4af1"
+      },
+      "source": [
+        "la=list(a)\n",
+        "la"
+      ],
+      "execution_count": 2,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 2
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "jTCfsxMsktps",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 169
+        },
+        "outputId": "7c713d27-1070-42c8-e278-7682b1e84ecf"
+      },
+      "source": [
+        "larr*5"
+      ],
+      "execution_count": 5,
+      "outputs": [
+        {
+          "output_type": "error",
+          "ename": "NameError",
+          "evalue": "ignored",
+          "traceback": [
+            "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m",
+            "\u001b[0;31mNameError\u001b[0m                                 Traceback (most recent call last)",
+            "\u001b[0;32m<ipython-input-5-d38cf7d73dd4>\u001b[0m in \u001b[0;36m<module>\u001b[0;34m()\u001b[0m\n\u001b[0;32m----> 1\u001b[0;31m \u001b[0mlarr\u001b[0m\u001b[0;34m*\u001b[0m\u001b[0;36m5\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m",
+            "\u001b[0;31mNameError\u001b[0m: name 'larr' is not defined"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "y0J9UXaNBEEZ"
+      },
+      "source": [
+        "> 그러면 리스트 각 요소를 2배, 또는 5배로 변경하는 방법은?"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "mkE27R9y-JTu",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "8b04570a-8fa8-454c-d597-238fb6ff147b"
+      },
+      "source": [
+        "2*la"
+      ],
+      "execution_count": 6,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9]"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 6
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "pdLVw53O-JTx",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "eb0dbf17-3a19-4b03-b331-178854646c69"
+      },
+      "source": [
+        "[5 * i for i in la]"
+      ],
+      "execution_count": 7,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "[0, 5, 10, 15, 20, 25, 30, 35, 40, 45]"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 7
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "9XBLYZxH-JT3"
+      },
+      "source": [
+        "import numpy as np"
+      ],
+      "execution_count": 8,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "OloSuyLU-JT9",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "708506b7-7f3f-4a5c-9e2a-7c68c42f5de0"
+      },
+      "source": [
+        "larr = np.array(la)\n",
+        "larr*5   # broadcasted multiplication"
+      ],
+      "execution_count": 9,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "array([ 0,  5, 10, 15, 20, 25, 30, 35, 40, 45])"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 9
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "TN08-s72eYK8",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "199ff5ea-e2a5-4f5e-fc39-4544e03abac7"
+      },
+      "source": [
+        "# Try below!\n",
+        "la = np.array(a)\n",
+        "la"
+      ],
+      "execution_count": 10,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 10
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "FrlJGz2GBbQu"
+      },
+      "source": [
+        "### numpy가 데이터 코딩, 특히 딥러닝에 이용되는 예제\n",
+        "\n",
+        "> http://life21c.inje.ac.kr:8501/\n"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "rkvrp48LJX5-"
+      },
+      "source": [
+        "- numpy array vs. list\n",
+        "\n",
+        "    *  머신러닝에서 숫자, 사람, 동물 등의 인식을 하기 위해서는 이미지 데이터를 행렬(matrix)로 변환하는 것이 중요하다.\n",
+        "    *  행렬을 나타내기 위해서는 list를 사용할 수도 있지만, 행렬 연산이 직관적이지 않고 오류 가능성이 높기 때문에 **행렬 연산을 위해서는 numpy 사용이 필수적**이다."
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "akd3AxgKe0l5"
+      },
+      "source": [
+        "---"
+      ]
+    }
+  ]
+}
